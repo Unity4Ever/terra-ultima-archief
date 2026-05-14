@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terra Ultima - Het Complete Archief</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22none%22 stroke=%22%238b7355%22 stroke-width=%222%22/><path d=%22M50 5 L55 45 L95 50 L55 55 L50 95 L45 55 L5 50 L45 45 Z%22 fill=%22%238b7355%22/><circle cx=%2250%22 cy=%2250%22 r=%225%22 fill=%22%23f4f1ea%22/></svg>">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        paper: '#f4f1ea', 
+                        ink: '#2c2826',   
+                        accent: '#8b7355' 
+                    },
+                    fontFamily: {
+                        body: ['"EB Garamond"', 'serif'],
+                        quote: ['"Cormorant Garamond"', 'serif'],
+                        heading: ['"EB Garamond"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f4f1ea;
+            background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+        }
+        .gallery-card {
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .gallery-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .modal-open { overflow: hidden; }
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #8b7355, transparent);
+            margin: 4rem auto;
+            max-width: 50%;
+        }
+    </style>
+</head>
+<body class="font-body text-ink antialiased">
+
+    <!-- Header -->
+    <header class="max-w-5xl mx-auto pt-24 pb-12 px-6 text-center">
+        <p class="text-accent tracking-[0.3em] uppercase text-xs font-bold mb-6 font-sans">Expeditie Verslag — Menno van Velzen</p>
+        <h1 class="font-heading text-6xl md:text-8xl font-bold mb-4 tracking-tighter">TERRA  ULTIMA</h1>
+        <p class="font-quote italic text-2xl text-gray-600 mb-12">Het verzamelde archief van Raoul Deleo</p>
+        
+        <div class="max-w-3xl mx-auto border-y border-accent/30 py-8">
+            <p class="text-xl leading-relaxed italic px-4">
+                "Wat stond me hier te wachten? Hoe moest ik in godsnaam een heel continent in kaart brengen? Door er gewoonweg in rond te lopen? Nooit had ik me dat afgevraagd, druk als ik was met de voorbereiding van de reis en met mijn ambitie om Terra Ultima te vinden. Het liefst was ik ter plekke in rook opgegaan. Over en uit."
+            </p>
+        </div>
+    </header>
+
+    <!-- CATEGORIE 1: De Iconen -->
+    <section class="max-w-7xl mx-auto px-6 py-12">
+        <h2 class="font-heading text-4xl text-center mb-16 italic">De Grote Specimen</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            
+            <div class="gallery-card bg-white p-4 shadow-lg cursor-pointer" onclick="openLightbox('Framed_Original_Elephoenicus_2020.jpg', 'Elephoenicus')">
+                <img src="Framed_Original_Elephoenicus_2020.jpg" alt="Elephoenicus" class="w-full h-80 object-contain mb-4">
+                <p class="text-center font-quote italic text-2xl">Elephoenicus</p>
+            </div>
+
+            <div class="gallery-card bg-white p-4 shadow-lg cursor-pointer" onclick="openLightbox('framed-Psychornis-Leucopsis-2006-1.jpg', 'Psychornis Leucopsis')">
+                <img src="framed-Psychornis-Leucopsis-2006-1.jpg" alt="Psychornis" class="w-full h-80 object-contain mb-4">
+                <p class="text-center font-quote italic text-2xl">Psychornis Leucopsis</p>
+            </div>
+
+            <div class="gallery-card bg-white p-4 shadow-lg cursor-pointer" onclick="openLightbox('Framed_Originals_Gorillrus_03.jpg', 'Gorillrus')">
+                <img src="Framed_Originals_Gorillrus_03.jpg" alt="Gorillrus" class="w-full h-80 object-contain mb-4">
+                <p class="text-center font-quote italic text-2xl">Gorillrus</p>
+            </div>
+
+            <div class="gallery-card bg-white p-4 shadow-lg cursor-pointer" onclick="openLightbox('Cygnophidianus_with-frame_01.jpg', 'Cygnophidianus')">
+                <img src="Cygnophidianus_with-frame_01.jpg" alt="Cygnophidianus" class="w-full h-80 object-contain mb-4">
+                <p class="text-center font-quote italic text-2xl">Cygnophidianus</p>
+            </div>
+
+            <div class="gallery-card bg-white p-4 shadow-lg cursor-pointer" onclick="openLightbox('Framed_Original_Lady-Bear_2019.jpg', 'Ursus Ornatus')">
+                <img src="Framed_Original_Lady-Bear_2019.jpg" alt="Lady Bear" class="w-full h-80 object-contain mb-4">
+                <p class="text-center font-quote italic text-2xl">Ursus Ornatus (Lady Bear)</p>
+            </div>
+
+            <div class="gallery-card bg-white p-4 shadow-lg cursor-pointer" onclick="openLightbox('Pinguilagus-pseudopticus-framed-groot_01.jpg', 'Pinguilagus Pseudopticus')">
+                <img src="Pinguilagus-pseudopticus-framed-groot_01.jpg" alt="Pinguilagus" class="w-full h-80 object-contain mb-4">
+                <p class="text-center font-quote italic text-2xl">Pinguilagus Pseudopticus</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- CATEGORIE 2: Gevleugelde Wonderen -->
+    <section class="max-w-7xl mx-auto px-6 py-12 bg-accent/5 rounded-[3rem] shadow-inner">
+        <h2 class="font-heading text-4xl text-center mb-16 italic">De Avifauna van Terra Ultima</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            
+            <div class="gallery-card bg-white p-2 shadow-md cursor-pointer" onclick="openLightbox('framed-Ardea-Rostrapectinata-1.jpg', 'Ardea Rostrapectinata')">
+                <img src="framed-Ardea-Rostrapectinata-1.jpg" class="w-full h-64 object-contain">
+                <p class="text-center font-quote text-lg mt-2">Ardea Rostrapectinata</p>
+            </div>
+
+            <div class="gallery-card bg-white p-2 shadow-md cursor-pointer" onclick="openLightbox('framed-Majestigallus-1.jpg', 'Majestigallus')">
+                <img src="framed-Majestigallus-1.jpg" class="w-full h-64 object-contain">
+                <p class="text-center font-quote text-lg mt-2">Majestigallus</p>
+            </div>
+
+            <div class="gallery-card bg-white p-2 shadow-md cursor-pointer" onclick="openLightbox('framed-Crax-Schizocephalus-1.jpg', 'Crax Schizocephalus')">
+                <img src="framed-Crax-Schizocephalus-1.jpg" class="w-full h-64 object-contain">
+                <p class="text-center font-quote text-lg mt-2">Crax Schizocephalus</p>
+            </div>
+
+            <div class="gallery-card bg-white p-2 shadow-md cursor-pointer" onclick="openLightbox('framed-Oxylophus-1.jpg', 'Oxylophus')">
+                <img src="framed-Oxylophus-1.jpg" class="w-full h-64 object-contain">
+                <p class="text-center font-quote text-lg mt-2">Oxylophus</p>
+            </div>
+
+            <div class="gallery-card bg-white p-2 shadow-md cursor-pointer" onclick="openLightbox('framed-Parus-Caudapendulus-1.jpg', 'Parus Caudapendulus')">
+                <img src="framed-Parus-Caudapendulus-1.jpg" class="w-full h-64 object-contain">
+                <p class="text-center font-quote text-lg mt-2">Parus Caudapendulus</p>
+            </div>
+
+            <div class="gallery-card bg-white p-2 shadow-md cursor-pointer" onclick="openLightbox('framed-Ramphastos-1.jpg', 'Ramphastos')">
+                <img src="framed-Ramphastos-1.jpg" class="w-full h-64 object-contain">
+                <p class="text-center font-quote text-lg mt-2">Ramphastos</p>
+            </div>
+
+            <div class="gallery-card bg-white p-2 shadow-md cursor-pointer" onclick="openLightbox('Phoenicopterus-framed-original.jpg', 'Phoenicopterus')">
+                <img src="Phoenicopterus-framed-original.jpg" class="w-full h-64 object-contain">
+                <p class="text-center font-quote text-lg mt-2">Phoenicopterus</p>
+            </div>
+
+            <div class="gallery-card bg-white p-2 shadow-md cursor-pointer" onclick="openLightbox('framed-Haryopsis-1.jpg', 'Haryopsis')">
+                <img src="framed-Haryopsis-1.jpg" class="w-full h-64 object-contain">
+                <p class="text-center font-quote text-lg mt-2">Haryopsis</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORIE 3: Anatomie & Curiositeiten -->
+    <section class="max-w-7xl mx-auto px-6 py-24">
+        <h2 class="font-heading text-4xl text-center mb-16 italic">Anatomie & Curiositeiten</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <div class="gallery-card bg-white p-4 shadow-lg cursor-pointer" onclick="openLightbox('cranium-collection-compilation-6.jpg', 'De Schedel-collectie')">
+                <img src="cranium-collection-compilation-6.jpg" class="w-full h-64 object-contain">
+                <p class="text-center font-quote italic mt-4">Cranium Collectie</p>
+            </div>
+
+            <div class="gallery-card bg-white p-4 shadow-lg cursor-pointer" onclick="openLightbox('Embryo-Pinguilagus-pseudopticus-Raoul-Deleo-Gallery-Untitled.jpg', 'Embryo van de Pinguilagus')">
+                <img src="Embryo-Pinguilagus-pseudopticus-Raoul-Deleo-Gallery-Untitled.jpg" class="w-full h-64 object-contain">
+                <p class="text-center font-quote italic mt-4">Embryonale Studie</p>
+            </div>
+
+            <div class="gallery-card bg-white p-4 shadow-lg cursor-pointer" onclick="openLightbox('Tucanogemina-carcinoforma_foto_Raoul-Deleo.jpg', 'Tucanogemina Carcinoforma')">
+                <img src="Tucanogemina-carcinoforma_foto_Raoul-Deleo.jpg" class="w-full h-64 object-contain">
+                <p class="text-center font-quote italic mt-4">Tucanogemina</p>
+            </div>
+
+            <div class="gallery-card bg-white p-4 shadow-lg cursor-pointer" onclick="openLightbox('Objets-Trouvé_werkblad_02c.jpg', 'Objets Trouvés')">
+                <img src="Objets-Trouvé_werkblad_02c.jpg" class="w-full h-64 object-contain">
+                <p class="text-center font-quote italic mt-4">Veldvondsten</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORIE 4: Veldnotities & Overzichten -->
+    <section class="max-w-7xl mx-auto px-6 pb-24">
+        <h2 class="font-heading text-4xl text-center mb-16 italic">Archiefkasten & Veldnotities</h2>
+        <div class="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+            <img src="Framed_Originals_Terra_Ultima_01-1.jpg" onclick="openLightbox(this.src, 'Archiefoverzicht I')" class="w-full shadow-md cursor-pointer hover:opacity-90 transition">
+            <img src="Framed_Originals_Terra_Ultima_02-1.jpg" onclick="openLightbox(this.src, 'Archiefoverzicht II')" class="w-full shadow-md cursor-pointer hover:opacity-90 transition">
+            <img src="Framed_Originals_Terra_Ultima_03-1.jpg" onclick="openLightbox(this.src, 'Archiefoverzicht III')" class="w-full shadow-md cursor-pointer hover:opacity-90 transition">
+            <img src="Framed_Originals_Terra_Ultima_04-1.jpg" onclick="openLightbox(this.src, 'Veldnotitie IV')" class="w-full shadow-md cursor-pointer hover:opacity-90 transition">
+            <img src="Framed_Originals_Terra_Ultima_05.jpg" onclick="openLightbox(this.src, 'Veldnotitie V')" class="w-full shadow-md cursor-pointer hover:opacity-90 transition">
+            <img src="Framed_Originals_Terra_Ultima_06.jpg" onclick="openLightbox(this.src, 'Veldnotitie VI')" class="w-full shadow-md cursor-pointer hover:opacity-90 transition">
+            <img src="Framed_Originals_Terra_Ultima_07.jpg" onclick="openLightbox(this.src, 'Veldnotitie VII')" class="w-full shadow-md cursor-pointer hover:opacity-90 transition">
+            <img src="Framed_Originals_Terra_Ultima_08.jpg" onclick="openLightbox(this.src, 'Veldnotitie VIII')" class="w-full shadow-md cursor-pointer hover:opacity-90 transition">
+            <img src="Framed_Originals_Terra_Ultima_09.jpg" onclick="openLightbox(this.src, 'Veldnotitie IX')" class="w-full shadow-md cursor-pointer hover:opacity-90 transition">
+            <img src="Framed_Originals_Terra_Ultima_10.jpg" onclick="openLightbox(this.src, 'Veldnotitie X')" class="w-full shadow-md cursor-pointer hover:opacity-90 transition">
+            <img src="unframed-print-Dromopteryx_01-2.jpg" onclick="openLightbox(this.src, 'Dromopteryx Studie')" class="w-full shadow-md cursor-pointer hover:opacity-90 transition">
+            <img src="diagonal-Plantfish-print_framed-visual_03-1.jpg" onclick="openLightbox(this.src, 'Ichthyoplanta')" class="w-full shadow-md cursor-pointer hover:opacity-90 transition">
+            <img src="framed-Batrachopus-1.jpg" onclick="openLightbox(this.src, 'Batrachopus')" class="w-full shadow-md cursor-pointer hover:opacity-90 transition">
+            <img src="2868EBDA-213E-4046-84B1-16876A798A2C.jpg" onclick="openLightbox(this.src, 'Veldnotitie XI')" class="w-full shadow-md cursor-pointer hover:opacity-90 transition">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-ink text-paper py-20 text-center mt-12">
+        <p class="font-heading italic text-3xl mb-4">"Zolang men blijft kijken, blijft Terra Ultima bestaan."</p>
+        <div class="mt-8 text-accent/60 text-xs uppercase tracking-widest font-sans">
+            <p>&copy; 14-5-2026 Menno van Velzen — Nederlands Boekverslag</p>
+            <p>Illustraties door Raoul Deleo</p>
+            <p>Speciaal voor Marja! Groetjes Menno!</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-[#0c0b0a]/95 hidden flex flex-col items-center justify-center opacity-0 transition-all duration-300">
+        <button onclick="closeLightbox()" class="absolute top-8 right-8 text-white hover:text-accent z-50">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <div class="relative w-full max-w-5xl h-[70vh] flex items-center justify-center p-4">
+            <img id="lightbox-img" src="" alt="" class="max-w-full max-h-full object-contain shadow-2xl">
+        </div>
+        <div id="lightbox-caption" class="text-paper font-quote italic text-3xl mt-8 text-center px-6"></div>
+    </div>
+
+    <script>
+        const lb = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lightbox-img');
+        const lbCap = document.getElementById('lightbox-caption');
+
+        function openLightbox(src, cap) {
+            lbImg.src = src;
+            lbCap.textContent = cap;
+            lb.classList.remove('hidden');
+            setTimeout(() => lb.classList.remove('opacity-0'), 10);
+            document.body.classList.add('modal-open');
+        }
+
+        function closeLightbox() {
+            lb.classList.add('opacity-0');
+            setTimeout(() => {
+                lb.classList.add('hidden');
+                lbImg.src = '';
+            }, 300);
+            document.body.classList.remove('modal-open');
+        }
+
+        lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
+        document.addEventListener('keydown', (e) => { if (e.key === "Escape") closeLightbox(); });
+    </script>
+</body>
+</html>
